@@ -8,12 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.Repositories
+namespace Persistence.Repositories;
+
+public class SomeFeatureEntityRepository : EfRepositoryBase<SomeFeatureEntity, BaseDbContext>, ISomeFeatureEntityRepository
 {
-    public class SomeFeatureEntityRepository : EfRepositoryBase<SomeFeatureEntity, BaseDbContext>, ISomeFeatureEntityRepository
+    public SomeFeatureEntityRepository(BaseDbContext context) : base(context)
     {
-        public SomeFeatureEntityRepository(BaseDbContext context) : base(context)
-        {
-        }
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.someFeature.Dtos
+namespace Application.Features.someFeature.Dtos;
+
+public class CreatedSomeFeatureEntityDto
 {
-    public class CreatedSomeFeatureEntityDto
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; }
 }
