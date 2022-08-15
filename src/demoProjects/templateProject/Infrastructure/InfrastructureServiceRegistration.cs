@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure
+namespace Infrastructure;
+
+public static class InfrastructureServiceRegistration
 {
-    public static class InfrastructureServiceRegistration
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
-        {
-            return services;
-        }
+        return services;
     }
 }

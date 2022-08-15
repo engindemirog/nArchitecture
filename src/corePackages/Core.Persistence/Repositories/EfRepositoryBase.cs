@@ -31,7 +31,17 @@ public class EfRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>, IR
                                                        CancellationToken cancellationToken = default)
     {
         IQueryable<TEntity> queryable = Query();
-        if (!enableTracking) queryable = queryable.AsNoTracking();
+        if (!enableTracking)
+        {
+            if (include != null)
+            {
+                queryable = queryable.AsNoTrackingWithIdentityResolution();
+            }
+            else
+            {
+                queryable = queryable.AsNoTracking();
+            }
+        }
         if (include != null) queryable = include(queryable);
         if (predicate != null) queryable = queryable.Where(predicate);
         if (orderBy != null)
@@ -48,7 +58,17 @@ public class EfRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>, IR
                                                                 CancellationToken cancellationToken = default)
     {
         IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
-        if (!enableTracking) queryable = queryable.AsNoTracking();
+        if (!enableTracking)
+        {
+            if (include != null)
+            {
+                queryable = queryable.AsNoTrackingWithIdentityResolution();
+            }
+            else
+            {
+                queryable = queryable.AsNoTracking();
+            }
+        }
         if (include != null) queryable = include(queryable);
         return await queryable.ToPaginateAsync(index, size, 0, cancellationToken);
     }
@@ -91,7 +111,17 @@ public class EfRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>, IR
                                       bool enableTracking = true)
     {
         IQueryable<TEntity> queryable = Query();
-        if (!enableTracking) queryable = queryable.AsNoTracking();
+        if (!enableTracking)
+        {
+            if (include != null)
+            {
+                queryable = queryable.AsNoTrackingWithIdentityResolution();
+            }
+            else
+            {
+                queryable = queryable.AsNoTracking();
+            }
+        }
         if (include != null) queryable = include(queryable);
         if (predicate != null) queryable = queryable.Where(predicate);
         if (orderBy != null)
@@ -105,7 +135,17 @@ public class EfRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>, IR
                                                bool enableTracking = true)
     {
         IQueryable<TEntity> queryable = Query().AsQueryable().ToDynamic(dynamic);
-        if (!enableTracking) queryable = queryable.AsNoTracking();
+        if (!enableTracking)
+        {
+            if (include != null)
+            {
+                queryable = queryable.AsNoTrackingWithIdentityResolution();
+            }
+            else
+            {
+                queryable = queryable.AsNoTracking();
+            }
+        }
         if (include != null) queryable = include(queryable);
         return queryable.ToPaginate(index, size);
     }
