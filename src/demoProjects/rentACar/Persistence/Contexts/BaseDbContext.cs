@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Persistence.Contexts;
 
 public class BaseDbContext : DbContext
@@ -39,5 +40,6 @@ public class BaseDbContext : DbContext
         Brand[] brandEntitySeeds = { new(1, "BMW"), new(2, "Mercedes") };
         modelBuilder.Entity<Brand>().HasData(brandEntitySeeds);
       
+
     }
 }
