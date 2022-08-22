@@ -1,3 +1,4 @@
+using Application;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-//builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices();
 //builder.Services.AddSecurityServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 //builder.Services.AddInfrastructureServices();
@@ -29,3 +30,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//23.05 Dersteyiz
