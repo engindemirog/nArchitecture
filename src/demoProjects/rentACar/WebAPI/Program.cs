@@ -1,4 +1,5 @@
 using Application;
+using Core.CrossCuttingConcerns.Exceptions;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,10 +26,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+if (app.Environment.IsProduction())
+    app.ConfigureCustomExceptionMiddleware();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
-
-//23.05 Dersteyiz
