@@ -37,6 +37,4 @@ namespace Application.Features.Brands.Queries.GetListBrand
             }
         }
     }
-
-    //22.05 Dersteyiz...
 }
