@@ -8,16 +8,16 @@
 
 	<ItemGroup>
 		<Folder Include="Features\Brands\Constants\" />
-		<Folder Include="Features\Brands\Models\" />
-		<Folder Include="Features\Brands\Queries\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.1" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\corePackages\Core.Application\Core.Application.csproj" />
 		<ProjectReference Include="..\..\..\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
 		<ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
