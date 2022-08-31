@@ -12,7 +12,7 @@ namespace Application.Features.Brands.Profiles
         {
             CreateMap<Brand, CreatedBrandDto>().ReverseMap(); // her iki türlü de mapleme çalışır. Brand dto yada dto Brand
             CreateMap<Brand, CreateBrandCommand>().ReverseMap();
-            CreateMap<IPaginate<Brand>, Models.BrandGetByIdDto>().ReverseMap();
+            CreateMap<IPaginate<Brand>, BrandGetByIdDto>().ReverseMap();
             CreateMap<Brand, BrandListDto>().ReverseMap();
             CreateMap<Brand, BrandListDto>().ReverseMap();
         }
