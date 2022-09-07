@@ -58,6 +58,3 @@ namespace Persistence.Migrations
         }
     }
 }
-
-
-//22.15 dersteyiz
