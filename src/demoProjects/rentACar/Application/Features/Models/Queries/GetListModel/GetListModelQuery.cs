@@ -45,5 +45,3 @@ namespace Application.Features.Models.Queries.GetListModel
         }
     }
 }
-
-//23.15 dersteyiz
