@@ -31,6 +31,7 @@ namespace Persistence.Contexts
                 a.ToTable("Brands").HasKey(k => k.Id);
                 a.Property(p => p.Id).HasColumnName("Id");
                 a.Property(p => p.Name).HasColumnName("Name");
+
                 a.HasMany(p => p.Models);
             });
 
@@ -45,7 +46,9 @@ namespace Persistence.Contexts
                 a.Property(p => p.Name).HasColumnName("Name");
                 a.Property(p => p.DailyPrice).HasColumnName("DailyPrice");
                 a.Property(p => p.ImageUrl).HasColumnName("ImageUrl");
+
                 a.HasOne(p => p.Brand);
+                a.Navigation(p => p.Brand).AutoInclude();
             });
 
             Model[] modelEntitySeeds = {

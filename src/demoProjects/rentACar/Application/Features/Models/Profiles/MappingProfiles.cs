@@ -15,6 +15,10 @@ namespace Application.Features.Models.Profiles
                 .ReverseMap();
 
             CreateMap<IPaginate<Model>, ModelListModel>().ReverseMap();
+
+            CreateMap<Model, ModelGetbyIdDto>()
+                .ForMember(c => c.BrandName, opt => opt.MapFrom(c => c.Brand.Name))
+                .ReverseMap();
         }
     }
 }
