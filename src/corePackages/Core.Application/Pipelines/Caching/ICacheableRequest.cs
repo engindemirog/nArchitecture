@@ -1,6 +1,6 @@
 ﻿namespace Core.Application.Pipelines.Caching;
 
-public interface ICachableRequest
+public interface ICacheableRequest
 {
     bool BypassCache { get; }
     string CacheKey { get; }

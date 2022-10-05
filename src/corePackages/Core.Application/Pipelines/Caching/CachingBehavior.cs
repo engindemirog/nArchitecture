@@ -8,7 +8,7 @@ using System.Text;
 namespace Core.Application.Pipelines.Caching;
 
 public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>, ICachableRequest
+    where TRequest : IRequest<TResponse>, ICacheableRequest
 {
     private readonly IDistributedCache _cache;
     private readonly ILogger<CachingBehavior<TRequest, TResponse>> _logger;
