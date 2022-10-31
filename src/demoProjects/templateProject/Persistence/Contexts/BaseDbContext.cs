@@ -38,7 +38,7 @@ namespace Persistence.Contexts
 
 
 
-            SomeFeatureEntity[] someFeatureEntitySeeds = { new(1, "Test 1"), new(2, "Test 2") };
+            SomeFeatureEntity[] someFeatureEntitySeeds = { new(1, "Test 1"), new(2, "Test 2")};
             modelBuilder.Entity<SomeFeatureEntity>().HasData(someFeatureEntitySeeds);
 
            

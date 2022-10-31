@@ -30,6 +30,11 @@ namespace Persistence.Migrations
                 table: "Brands",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 2, "Mercedes" });
+
+            migrationBuilder.InsertData(
+                table: "Brands",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 3, "Audi" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
